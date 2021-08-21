@@ -3,17 +3,23 @@
   <head>
     <title>Back End Assessment</title>
   </head>
-  <!-- insert form -->
-  <form id="commentForm" action="#">
-    <input 
-        type='text'
+  <body>
+    <form
+      id="commentForm"
+      action="http://localhost:4000/api/comment"
+      method="POST"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <label for="commentInput">Comment</label>
+      <input 
         name="comment"
-        id="commentInput"
-        placeholder="Add kind comment"/>
+        placeholder="Add kind comment"
+        type='text'
+        required
+      />
+      <button type="submit">Add comment</button>
+    </form>
 
-        <button type="submit">add comment</button>
-  </form>
-  <body class="container">
     <button id="complimentButton">Get a compliment</button>
     <!-- fortune button -->
     <button id="fortuneButton">Get a fortune</button>
@@ -25,6 +31,6 @@
     </section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./app.js"></script>
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>

@@ -1,6 +1,10 @@
 [
-    {
-        "id": 1,
-        "comment": "You look like shrek"
-    }
+  {
+    "id": 1,
+    "text": "You look like shrek"
+  },
+  {
+    "id": 2,
+    "text": "You look like donkey"
+  }
 ]

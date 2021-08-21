@@ -1,3 +1,6 @@
+import "./form-controls.js";
+import { getComments } from "./comments.js";
+
 document.getElementById("complimentButton").addEventListener("click", () => {
   axios.get("http://localhost:4000/api/compliment/").then((response) => {
     const data = response.data;
@@ -21,28 +24,5 @@ document.getElementById("unfortuneButton").addEventListener("click", () => {
   });
 });
 
-document.getElementById("commentForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const input = document.getElementById("commentInput");
-  const comment = input.value;
-
-  axios
-    .post("http://localhost:4000/api/comment/", {
-      comment,
-    })
-    .then((response) => {
-        appendComment(response.data);
-        input.value = ''
-    });
-});
-
-// Comment DOM stuff
-
-const commentsSection = document.querySelector("#comments");
-
-function appendComment(text) {
-  const p = document.createElement("p");
-  p.textContent = text;
-  commentsSection.appendChild(p);
-}
+// Retrieve all of the comments from the server and update the DOM
+getComments();
